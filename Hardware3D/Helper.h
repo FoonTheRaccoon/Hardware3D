@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <cstring>
 
-//Little ASCII to wchar conversion
+//Little ASCII to wchar_t conversion
 inline const wchar_t* U2W(const char* orig)
 {
 	size_t newsize = strlen(orig) + 1;

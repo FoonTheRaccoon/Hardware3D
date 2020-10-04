@@ -7,7 +7,7 @@ Window::WindowClass Window::WindowClass::wndClass;
 
 Window::WindowClass::WindowClass() noexcept
 	:
-	hInst(GetModuleHandle(nullptr))
+	hInst(GetModuleHandleW(nullptr))
 {
 	WNDCLASSEX wc = { 0 };
 	wc.cbSize = sizeof(wc);
@@ -16,13 +16,13 @@ Window::WindowClass::WindowClass() noexcept
 	wc.cbClsExtra = 0;
 	wc.cbWndExtra = 0;
 	wc.hInstance = GetInstance();
-	wc.hIcon = static_cast<HICON>(LoadImage(hInst, MAKEINTRESOURCE(IDI_ICON1), IMAGE_ICON, 32, 32, 0));
+	wc.hIcon = static_cast<HICON>(LoadImageW(hInst, MAKEINTRESOURCEW(IDI_ICON1), IMAGE_ICON, 32, 32, 0));
 	wc.hCursor = nullptr;
 	wc.hbrBackground = nullptr;
 	wc.lpszMenuName = nullptr;
 	wc.lpszClassName = GetName();
-	wc.hIconSm = static_cast<HICON>(LoadImage(hInst, MAKEINTRESOURCE(IDI_ICON1), IMAGE_ICON, 16, 16, 0));
-	RegisterClassEx(&wc);
+	wc.hIconSm = static_cast<HICON>(LoadImageW(hInst, MAKEINTRESOURCEW(IDI_ICON1), IMAGE_ICON, 16, 16, 0));
+	RegisterClassExW(&wc);
 }
 
 Window::WindowClass::~WindowClass()
@@ -111,6 +111,26 @@ LRESULT Window::HandleMsg(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) noe
 	case WM_CLOSE:
 		PostQuitMessage(0);
 		return 0;
+		//Case to kill zombie kbd inputs.
+	case WM_KILLFOCUS:
+		kbd.ClearState();
+		break;
+		//Keyboard Events ------------------------//
+	case WM_KEYDOWN:
+	case WM_SYSKEYDOWN:
+		if (!(lParam & 0x40000000) || kbd.AutoRepeatIsEnabled()) // filter autorepeat
+		{
+			kbd.OnKeyPressed(wParam);
+		}
+		break;
+	case WM_KEYUP:
+	case WM_SYSKEYUP:
+		kbd.OnKeyReleased(wParam);
+		break;
+	case WM_CHAR:
+		kbd.OnChar(wParam);
+		break;
+		//End Keyboard---------------------------//
 	}
 
 	return DefWindowProc(hWnd, msg, wParam, lParam);
