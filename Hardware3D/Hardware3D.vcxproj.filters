@@ -16,6 +16,9 @@
     <Filter Include="Header Files\Base">
       <UniqueIdentifier>{338a8ab4-9e1e-4c54-b91c-d53013381480}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Data Types">
+      <UniqueIdentifier>{5aad8393-7d96-40b7-9a66-3675308382aa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinMain.cpp">
@@ -28,6 +31,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Keyboard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Mouse.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -48,7 +54,13 @@
       <Filter>Header Files\Base</Filter>
     </ClInclude>
     <ClInclude Include="Keyboard.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Mouse.h">
+      <Filter>Header Files\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Vec2.h">
+      <Filter>Header Files\Data Types</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

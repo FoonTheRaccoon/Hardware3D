@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Keyboard.cpp" />
+    <ClCompile Include="Mouse.cpp" />
     <ClCompile Include="RacException.cpp" />
     <ClCompile Include="Window.cpp" />
     <ClCompile Include="WinMain.cpp" />
@@ -27,8 +28,10 @@
   <ItemGroup>
     <ClInclude Include="Helper.h" />
     <ClInclude Include="Keyboard.h" />
+    <ClInclude Include="Mouse.h" />
     <ClInclude Include="RacException.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="Vec2.h" />
     <ClInclude Include="Window.h" />
     <ClInclude Include="WinSetup.h" />
   </ItemGroup>
