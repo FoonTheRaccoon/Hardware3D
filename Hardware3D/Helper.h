@@ -3,9 +3,10 @@
 //Helper Functions
 #include <stdlib.h>
 #include <cstring>
+#include <memory>
 
-//Little ASCII to wchar_t conversion
-inline const wchar_t* U2W(const char* orig)
+//Little char to wchar_t conversion NEED TO DELETE OUTSIDE OF FUNCTION
+inline const wchar_t* N2W(const char* orig)
 {
 	size_t newsize = strlen(orig) + 1;
 

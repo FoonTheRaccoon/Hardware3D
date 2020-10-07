@@ -80,10 +80,12 @@ Window::~Window()
 
 void Window::SetTitle(const std::string& title)
 {
-	if (SetWindowText(hWnd, U2W(title.c_str())) == 0)
+	const auto wtitle = N2W(title.c_str());
+	if (SetWindowText(hWnd, wtitle) == 0)
 	{
 		throw RACWND_LAST_EXCEPT();
 	}
+	delete wtitle;
 }
 
 std::optional<int> Window::ProccessMessages()

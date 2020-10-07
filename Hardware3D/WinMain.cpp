@@ -12,11 +12,16 @@ int CALLBACK WinMain(
 	}
 	catch (const RacException& e)
 	{
-		MessageBoxW(nullptr, U2W(e.what()), U2W(e.GetType()), MB_OK | MB_ICONEXCLAMATION);
+		const auto what = N2W(e.what());
+		const auto type = N2W(e.GetType());
+		MessageBoxW(nullptr, what, type, MB_OK | MB_ICONEXCLAMATION);
+		delete what, type;
 	}
 	catch (const std::exception& e)
 	{
-		MessageBoxW(nullptr, U2W(e.what()), L"Standard Exception", MB_OK | MB_ICONEXCLAMATION);
+		const auto what = N2W(e.what());
+		MessageBoxW(nullptr, what, L"Standard Exception", MB_OK | MB_ICONEXCLAMATION);
+		delete what;
 	}
 	catch (...)
 	{
