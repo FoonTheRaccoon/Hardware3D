@@ -1,4 +1,4 @@
-#include "Window.h"
+#include "App.h"
 
 int CALLBACK WinMain(
 	HINSTANCE hInstance,
@@ -8,25 +8,7 @@ int CALLBACK WinMain(
 {
 	try
 	{
-		Window wnd(800, 600, L"Project Raccoon 3D Engine");
-
-		//Message and loop to keep window open
-		MSG msg;
-		BOOL gResult;
-		while ((gResult = GetMessageW(&msg, nullptr, 0, 0)) > 0)
-		{
-			TranslateMessage(&msg);
-			DispatchMessageW(&msg);
-		}
-
-		if (gResult == -1)
-		{
-			return -1;
-		}
-		else
-		{
-			return msg.wParam;
-		}
+		return App{}.Go();
 	}
 	catch (const RacException& e)
 	{
