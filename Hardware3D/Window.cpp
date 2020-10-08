@@ -69,8 +69,11 @@ Window::Window(int width, int height, const wchar_t* name)
 	{
 		throw RACWND_LAST_EXCEPT();
 	}
-	// show window
+	
 	ShowWindow(hWnd, SW_SHOWDEFAULT);
+	
+	//Init Graphics object.
+	pGfx = std::make_unique<Graphics>(hWnd);
 }
 
 Window::~Window()
