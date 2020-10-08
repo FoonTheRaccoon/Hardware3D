@@ -1,8 +1,9 @@
 #include "App.h"
 
-App::App()
+App::App(float width, float height, const wchar_t* name)
     :
-    wnd(800, 600, L"Project Raccoon 3D Engine")
+    wnd(width, height, name),
+    width(width), height(height)
 {}
 
 int App::Go()
@@ -20,6 +21,7 @@ int App::Go()
 void App::DoFrame()
 {
     wnd.Gfx().ClearBuffer(0.0f, 0.0f, 0.0f);
-    wnd.Gfx().DrawTriangle();
+    wnd.Gfx().DrawTriangle(-globalTimer.TimeSinceStart(), 0.0f, 0.0f);
+    wnd.Gfx().DrawTriangle(globalTimer.TimeSinceStart(), wnd.mouse.GetPosX() / (width / 2.0f) - 1.0f, -wnd.mouse.GetPosY() / (height / 2.0f) + 1.0f);
     wnd.Gfx().EndFrame();
 }

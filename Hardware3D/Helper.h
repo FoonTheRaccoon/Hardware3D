@@ -1,12 +1,16 @@
 #pragma once
 
 //Helper Functions
+#include "FrameTimer.h"
 #include <stdlib.h>
 #include <cstring>
 #include <vector>
 #include <string>
 #include <mbstring.h>
 #include <memory>
+
+//Global timer to be used by everything (Unless local scope timer is need)
+inline FrameTimer globalTimer;
 
 //const char* to const wchar_t*conversion NEED TO DELETE OUTSIDE OF FUNCTION
 inline const wchar_t* N2W(const char* orig)

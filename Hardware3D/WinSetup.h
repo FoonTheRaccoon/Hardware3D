@@ -44,4 +44,8 @@
 #define STRICT
 
 #include <Windows.h>
+#include <DirectXMath.h>
+
+namespace DX = DirectX;
+
 

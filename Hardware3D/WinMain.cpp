@@ -8,7 +8,7 @@ int CALLBACK WinMain(
 {
 	try
 	{
-		return App{}.Go();
+		return App{ 800.0f, 600.0f, L"Project Raccoon 3D Engine" }.Go();
 	}
 	catch (const RacException& e)
 	{

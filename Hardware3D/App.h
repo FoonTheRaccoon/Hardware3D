@@ -4,11 +4,13 @@
 class App
 {
 public:
-	App();
+	App(float width, float height, const wchar_t* name);
 	int Go();
 private:
 	void DoFrame();
 private:
+	const float width;
+	const float height;
 	Window wnd;
 };
 

@@ -62,13 +62,13 @@ public:
 		{
 			return { x, y };
 		}
-		int GetPosX() const noexcept
+		float GetPosX() const noexcept
 		{
-			return x;
+			return (float)x;
 		}
-		int GetPosY() const noexcept
+		float GetPosY() const noexcept
 		{
-			return y;
+			return (float)y;
 		}
 		bool LeftIsPressed() const noexcept
 		{
@@ -119,8 +119,8 @@ private:
 	void OnWheelDelta(int x, int y, int delta) noexcept;
 private:
 	static constexpr unsigned int bufferSize = 16u;
-	int x;
-	int y;
+	int x = 0;
+	int y = 0;
 	bool leftIsPressed = false;
 	bool rightIsPressed = false;
 	bool wheelIsPressed = false;
