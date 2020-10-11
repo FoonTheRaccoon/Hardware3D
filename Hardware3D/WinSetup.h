@@ -1,4 +1,5 @@
 #pragma once
+#include <DirectXMath.h>
 #include "Helper.h"
 // target Windows 7 or later
 #define _WIN32_WINNT 0x0601
@@ -44,7 +45,7 @@
 #define STRICT
 
 #include <Windows.h>
-#include <DirectXMath.h>
+
 
 namespace DX = DirectX;
 

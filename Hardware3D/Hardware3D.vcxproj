@@ -38,7 +38,9 @@
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="Helper.h" />
     <ClInclude Include="Keyboard.h" />
+    <ClInclude Include="Model.h" />
     <ClInclude Include="Mouse.h" />
+    <ClInclude Include="ObjLoader.h" />
     <ClInclude Include="RacException.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Vec2.h" />

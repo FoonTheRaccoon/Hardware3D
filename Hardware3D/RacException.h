@@ -23,6 +23,11 @@
 #define GFX_THROW_INFO_ONLY(call) (call)
 #endif
 
+//Error exception helper macro
+#define RACWND_EXCEPT( hr ) Window::Exception( __LINE__,__FILE__,hr )
+#define RACWND_LAST_EXCEPT() Window::Exception( __LINE__,__FILE__,GetLastError() )
+
+
 class RacException : public std::exception
 {
 public:

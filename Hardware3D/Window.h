@@ -39,7 +39,7 @@ private:
 		HINSTANCE hInst;
 	};
 public:
-	Window(int width, int height, const wchar_t* name);
+	Window(float width, float height, const wchar_t* name);
 	~Window();
 	Window(const Window&) = delete;
 	Window& operator=(const Window&) = delete;
@@ -57,13 +57,10 @@ public:
 	Mouse mouse;
 	Keyboard kbd;
 private:
-	int width;
-	int height;
+	float width;
+	float height;
 	HWND hWnd;
 	std::unique_ptr<Graphics> pGfx;
 };
 
-// error exception helper macro
-#define RACWND_EXCEPT( hr ) Window::Exception( __LINE__,__FILE__,hr )
-#define RACWND_LAST_EXCEPT() Window::Exception( __LINE__,__FILE__,GetLastError() )
 

@@ -31,16 +31,11 @@ inline const char* W2N(const wchar_t* orig)
     size_t origsize = wcslen(orig) + 1;
     size_t convertedChars = 0;
 
-    char strConcat[] = " (char *)";
-    size_t strConcatsize = (strlen(strConcat) + 1) * 2;
-
     const size_t newsize = origsize * 2;
 
-    char* nstring = new char[newsize + strConcatsize];
+    char* nstring = new char[newsize];
 
     wcstombs_s(&convertedChars, nstring, newsize, orig, _TRUNCATE);
-
-    _mbscat_s((unsigned char*)nstring, newsize + strConcatsize, (unsigned char*)strConcat);
 
     return nstring;
 }

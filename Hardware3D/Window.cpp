@@ -42,7 +42,7 @@ HINSTANCE Window::WindowClass::GetInstance() noexcept
 
 
 // Window Stuff
-Window::Window(int width, int height, const wchar_t* name)
+Window::Window(float width, float height, const wchar_t* name)
 	:
 	width(width),
 	height(height)
@@ -50,9 +50,9 @@ Window::Window(int width, int height, const wchar_t* name)
 	// calculate window size based on desired client region size
 	RECT wr;
 	wr.left = 100;
-	wr.right = width + wr.left;
+	wr.right = LONG(width + wr.left);
 	wr.top = 100;
-	wr.bottom = height + wr.top;
+	wr.bottom = LONG(height + wr.top);
 	if (AdjustWindowRect(&wr, WS_CAPTION | WS_MINIMIZEBOX | WS_SYSMENU, FALSE) == 0)
 	{
 		throw RACWND_LAST_EXCEPT();

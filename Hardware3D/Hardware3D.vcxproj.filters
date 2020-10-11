@@ -25,20 +25,23 @@
     <Filter Include="Shader">
       <UniqueIdentifier>{e8550cb2-d5e1-4638-ac19-d3d984491ce5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Error">
-      <UniqueIdentifier>{e594137e-a425-4459-88eb-f48dd578c319}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Error">
-      <UniqueIdentifier>{80a61084-3f07-40f7-b219-44d21cf69038}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Error\dxerr">
-      <UniqueIdentifier>{0d1fb52c-c47e-4224-a411-bc6c77bb5dec}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Tools">
       <UniqueIdentifier>{e91731c9-6c06-4101-8da5-2f09a55d1d3f}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Tools">
       <UniqueIdentifier>{4e015119-404b-492b-85ae-c0ef950e186b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Bindable">
+      <UniqueIdentifier>{52b25d24-2f93-4852-84ab-b7eec607924e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Base\Error">
+      <UniqueIdentifier>{e594137e-a425-4459-88eb-f48dd578c319}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Base\Error\dxerr">
+      <UniqueIdentifier>{0d1fb52c-c47e-4224-a411-bc6c77bb5dec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Base\Error">
+      <UniqueIdentifier>{80a61084-3f07-40f7-b219-44d21cf69038}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -61,13 +64,13 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DxgiInfoManager.cpp">
-      <Filter>Source Files\Error</Filter>
+      <Filter>Source Files\Base\Error</Filter>
     </ClCompile>
     <ClCompile Include="RacException.cpp">
-      <Filter>Source Files\Error</Filter>
+      <Filter>Source Files\Base\Error</Filter>
     </ClCompile>
     <ClCompile Include="dxerr.cpp">
-      <Filter>Header Files\Error\dxerr</Filter>
+      <Filter>Header Files\Base\Error\dxerr</Filter>
     </ClCompile>
     <ClCompile Include="FrameTimer.cpp">
       <Filter>Source Files\Tools</Filter>
@@ -99,19 +102,25 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RacException.h">
-      <Filter>Header Files\Error</Filter>
+      <Filter>Header Files\Base\Error</Filter>
     </ClInclude>
     <ClInclude Include="DxgiInfoManager.h">
-      <Filter>Header Files\Error</Filter>
+      <Filter>Header Files\Base\Error</Filter>
     </ClInclude>
     <ClInclude Include="dxerr.h">
-      <Filter>Header Files\Error\dxerr</Filter>
+      <Filter>Header Files\Base\Error\dxerr</Filter>
     </ClInclude>
     <ClInclude Include="FrameTimer.h">
       <Filter>Header Files\Tools</Filter>
     </ClInclude>
     <ClInclude Include="Helper.h">
       <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjLoader.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>Header Files\Data Types</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -134,15 +143,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="DXTrace.inl">
-      <Filter>Header Files\Error\dxerr</Filter>
+      <Filter>Header Files\Base\Error\dxerr</Filter>
     </None>
     <None Include="DXGetErrorString.inl">
-      <Filter>Header Files\Error\dxerr</Filter>
+      <Filter>Header Files\Base\Error\dxerr</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Xml Include="DXGetErrorDescription.inl">
-      <Filter>Header Files\Error\dxerr</Filter>
+      <Filter>Header Files\Base\Error\dxerr</Filter>
     </Xml>
   </ItemGroup>
 </Project>
